@@ -2,7 +2,7 @@
   "name": "to-do-list-express",
   "version": "1.0.0",
   "description": "To do list using NodeJs + Express",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/cesardoliveira/to-do-list-express#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
