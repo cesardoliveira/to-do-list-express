@@ -10,7 +10,7 @@ const app = express();
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })) // Middleware para tratar requisicoes via form
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method', { methods: ['POST', 'GET']}))
 
 app.use(express.static(path.join(__dirname, 'public')))
 

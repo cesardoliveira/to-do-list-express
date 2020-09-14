@@ -34,7 +34,7 @@ router.get('/:id', async (req, res) => {
         let checklist = await Checklist.findById(req.params.id)
         res.status(200).render('checklists/show', { checklist: checklist })
     } catch (error) {
-        res.status(422).render('pages/error', { error: 'Erro ao exibir as Lista de Tarefa. ' })
+        res.status(422).render('pages/error', { error: 'Erro ao exibir a Lista de Tarefa. ' })
     }
 })
 
@@ -68,9 +68,9 @@ router.delete('/:id', async (req, res) => {
 
     try {
         let checklist = await Checklist.findByIdAndRemove(req.params.id)
-        res.status(200).json(checklist)
+        res.redirect('/checklists')
     } catch (error) {
-        res.json(422).json(error)
+        res.status(422).render('pages/error', { error: 'Erro ao deletar a Lista de Tarefa. ' })
     }
 })
 
