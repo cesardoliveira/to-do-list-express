@@ -3,12 +3,14 @@ const path = require('path')
 
 const rootRouter = require('./src/routes/index')
 const checklistRouter = require('./src/routes/checklist')
+const methodOverride = require('method-override')
 require('./config/database')
 
 const app = express();
+// Middlewares
 app.use(express.json());
-// Middleware para tratar requisicoes via form
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true })) // Middleware para tratar requisicoes via form
+app.use(methodOverride('_method'))
 
 app.use(express.static(path.join(__dirname, 'public')))
 
